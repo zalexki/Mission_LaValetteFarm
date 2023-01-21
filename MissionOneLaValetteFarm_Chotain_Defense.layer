@@ -1,0 +1,14 @@
+SCR_AIGroup Chotain_RB_Supp_team : "{1C0502B5729E7231}Prefabs/Groups/OPFOR/Group_USSR_Team_Suppress.et" {
+ coords 7074.574 100.42 6331.466
+ m_aStaticWaypoints {
+  "Chotain_RB_WP_Defend"
+ }
+}
+SCR_DefendWaypoint Chotain_RB_WP_Defend : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ coords 7106.631 104.199 6276.438
+ CompletionRadius 15
+}
+GenericEntity : "{9F9924B626C5FA2B}Prefabs/Compositions/Slotted/SlotRoadLarge/Checkpoint_L_USSR_01.et" {
+ coords 7107.343 104.32 6275.25
+ angleY 166.432
+}

@@ -1,0 +1,21 @@
+SubScene {
+ Parent "worlds/Eden/Eden.ent"
+}
+Layer ScenarioBase {
+ Index 0
+}
+Layer FarmDefense {
+ Index 1
+}
+Layer US_Base {
+ Index 2
+}
+Layer FindHostage {
+ Index 3
+}
+Layer US_Levie {
+ Index 4
+}
+Layer Chotain_Defense {
+ Index 5
+}

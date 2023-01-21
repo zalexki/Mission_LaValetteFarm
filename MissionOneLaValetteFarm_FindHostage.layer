@@ -1,0 +1,204 @@
+SCR_FactionControlTriggerEntity TriggerHostage {
+ coords 6454.997 162.232 6485.375
+ angleY -15
+ Flags 2
+ TriggerShapeType Sphere
+ SphereRadius 70
+ BoxMaxs 120 20 80
+ TriggerActivationType "First change"
+ PeriodicQueries 1
+ UpdatePeriod 5
+ OnActivate ""\
+ "		/* code here */"\
+ "		Print(\"hostage triggered\");"\
+ "		IEntity group = GetGame().GetWorld().FindEntityByName(\"Group_triggered_hostage_attack\");"\
+ "		AIWaypoint waypoint = AIWaypoint.Cast(GetGame().GetWorld().FindEntityByName(\"WP_trigger_attack\"));"\
+ "		SCR_AIGroup groupAI = SCR_AIGroup.Cast(group);"\
+ "		groupAI.AddWaypointToGroup(waypoint);"\
+ "	"
+ m_sOwnerFactionKey "US"
+ m_fFriendlyRatioLimit 1
+}
+SCR_EntityWaypoint WP_trigger_attack : "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et" {
+ coords 6433.654 162.099 6490.362
+ CompletionRadius 4.4
+}
+SCR_AIGroup Hostage_Suppress : "{1C0502B5729E7231}Prefabs/Groups/OPFOR/Group_USSR_Team_Suppress.et" {
+ coords 6445.981 162.216 6497.438
+ m_aStaticWaypoints {
+  "Hostage_Supp_Cycle"
+ }
+}
+$grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ Hostage_Supp_Patrol1 {
+  coords 6491.863 161.955 6509.896
+  CompletionRadius 3
+ }
+ Hostage_Supp_Patrol4 {
+  coords 6456.515 162.366 6499.694
+  CompletionRadius 3
+ }
+ Hostage_Supp_Patrol2 {
+  coords 6502.418 161.838 6489.046
+  CompletionRadius 3
+ }
+ Hostage_Supp_Patrol3 {
+  coords 6464.818 161.971 6475.975
+  CompletionRadius 3
+ }
+ Hostage_Sentry_WP_2 {
+  coords 6526.669 160.972 6465.536
+  CompletionRadius 3
+ }
+ Hostage_Sentry_WP_4 {
+  coords 6411.355 160.286 6438.313
+  CompletionRadius 3
+ }
+ Hostage_Sentry_WP_3 {
+  coords 6470.138 162.124 6451.793
+  CompletionRadius 3
+ }
+ Hostage_Sentry_WP_5 {
+  coords 6390.693 160.29 6486.853
+  CompletionRadius 3
+ }
+ Hostage_Sentry_WP_1 {
+  coords 6502.528 161.573 6528.458
+  CompletionRadius 3
+ }
+ Hostage_SentryForest_WP_1 {
+  coords 6169.869 167.446 6609.166
+  CompletionRadius 3
+ }
+ Hostage_SentryForest_WP_2 {
+  coords 6448.282 152.408 6665.184
+  CompletionRadius 3
+ }
+}
+$grp Vehicle : "{259EE7B78C51B624}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469.et" {
+ UAZ1 {
+  components {
+   SCR_VehicleDamageManagerComponent "{141326E9FD94FE40}" {
+    m_fVehicleDestroyDamage 8582.14
+   }
+  }
+  coords 6429.239 162.073 6479.492
+  angleY -20.832
+ }
+ UAZ2 {
+  components {
+   SCR_VehicleDamageManagerComponent "{141326E9FD94FE40}" {
+    m_fVehicleDestroyDamage 8582.14
+   }
+   SCR_VehicleFactionAffiliationComponent "{5882CBD9AC741CEC}" {
+    "faction affiliation" "US"
+   }
+  }
+  coords 6423.458 161.927 6477.479
+  angleY -20.832
+ }
+}
+$grp AIWaypointCycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ Hostage_Supp_Cycle {
+  coords 6486.275 162.031 6502.635
+  CompletionType Any
+  CycleWaypoints {
+   "Hostage_Supp_Patrol1" "Hostage_Supp_Patrol2" "Hostage_Supp_Patrol3" "Hostage_Supp_Patrol4"
+  }
+ }
+ Hostage_WP_Cycle {
+  coords 6413.971 161.813 6487.588
+  RerunCounter 1
+  CycleWaypoints {
+   "Hostage_WP_Wait" "Hostage_WP_GetInBTR_NoDriver"
+  }
+ }
+ Hostage_Sentry_WP_Cycle {
+  coords 6408.173 161.364 6464.676
+  CycleWaypoints {
+   "Hostage_Sentry_WP_1" "Hostage_Sentry_WP_2" "Hostage_Sentry_WP_3" "Hostage_Sentry_WP_4" "Hostage_Sentry_WP_5"
+  }
+ }
+ Hostage_SentryForest_Cycle {
+  coords 6404.538 157.367 6644.167
+  CompletionType Any
+  CycleWaypoints {
+   "Hostage_SentryForest_WP_1" "Hostage_SentryForest_WP_2"
+  }
+ }
+}
+SCR_TimedWaypoint Hostage_WP_Wait : "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et" {
+ coords 6420.055 161.764 6488.194
+ CompletionRadius 1
+ m_bIsPriority 1
+ m_holdingTime 5
+}
+SCR_EntityWaypoint Hostage_WP_BTR : "{712F4795CF8B91C7}Prefabs/AI/Waypoints/AIWaypoint_GetIn.et" {
+ coords 6418.311 161.849 6473.739
+ CompletionRadius 5
+ m_bIsPriority 1
+ m_sEntityName "BTR1"
+}
+SCR_AIGroup Hostage : "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam.et" {
+ components {
+  AIBehaviorTreeComponent "{13BAA835864B8992}" {
+  }
+  AIGroupMovementComponent "{55C4E4E28D6EA047}" {
+   "Max Speed" 5
+  }
+  SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+   m_EnableAttack 0
+   m_EnableLooking 0
+   m_EnableCommunication 0
+  }
+  SCR_BaseActionsEditorComponent "{5B3D4843DF2BE8CA}" {
+  }
+  ActionsManagerComponent "{5B3D4843E6759292}" {
+  }
+ }
+ coords 6405.463 161.847 6482.907
+ angleY -112.223
+ m_aUnitPrefabSlots {
+  "{9E95406C10C3DD59}Prefabs/HostageChimera.et"
+ }
+ m_aStaticVehicles {
+  "BTR1"
+ }
+}
+SCR_BoardingWaypoint Hostage_WP_GetInBTR_NoDriver : "{8AD8C82346156494}Prefabs/AI/Waypoints/AIWaypoint_GetInSelected.et" {
+ coords 6417.133 161.751 6474.264
+ CompletionRadius 4
+ m_holdingTime -1
+}
+Vehicle BTR1 : "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et" {
+ components {
+  AICarMovementComponent "{5A3EFB66475D9F87}" {
+   Enabled 1
+  }
+  SCR_VehicleDamageManagerComponent "{141326E9FD94FE40}" {
+   m_fVehicleDestroyDamage 16909
+  }
+  SCR_VehicleFactionAffiliationComponent "{5882CBD9AC741CEC}" {
+   "faction affiliation" "US"
+  }
+ }
+ coords 6417.874 162.014 6475.848
+ angleY -19.774
+}
+$grp SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" {
+ Hostage_Sentry_Outside {
+  coords 6521.377 161.007 6512.893
+ }
+ Hostage_Sentry_Forest {
+  coords 6396.496 157.209 6652.602
+  m_aStaticWaypoints {
+   "Hostage_SentryForest_Cycle"
+  }
+ }
+}
+SCR_AIGroup Group_triggered_hostage_attack : "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et" {
+ coords 7514.588 4.679 6682.227
+ m_aUnitPrefabSlots + {
+  "{AB9726163EC1BD81}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Medic.et"
+ }
+}

@@ -1,0 +1,281 @@
+GenericEntity : "{114DE81321786CD9}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01_PKM.et" {
+ coords 6495.12 122.197 6057.744
+ angleY -163.468
+}
+GenericEntity : "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" {
+ components {
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName UIInfo "{5222EB4D07D865FA}" {
+     Description "You can see some drawings on the map. They clearly have orders to defend the industrial compound north of the farm."
+    }
+   }
+  }
+ }
+ coords 6660.55 114.918 5927.916
+}
+$grp SCR_AIGroup : "{1A5F0D93609DA5DA}Prefabs/Groups/OPFOR/Group_USSR_ManeuverGroup.et" {
+ MG_Farm_North {
+  coords 6481.852 121.59 6056.992
+  m_aUnitPrefabSlots {
+   "{8E0FE664CE7D1CA9}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_GL.et"
+  }
+  m_aStaticWaypoints {
+   "MG_Farm_North_GetIn"
+  }
+ }
+ Group_Farm_North {
+  coords 6553.034 130.99 6113.683
+  m_aStaticWaypoints {
+   "Group_Farm_North_PatrolCycle"
+  }
+ }
+}
+$grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ Group_Farm_North_Patrol1 {
+  coords 6542.205 133.094 6127.35
+ }
+ Group_Farm_North_Patrol2 {
+  coords 6486.656 122.32 6067.293
+ }
+ Group_Farm_North_Patrol3 {
+  coords 6428.158 122.634 6095.239
+ }
+}
+GenericEntity : "{27F6A0815E6FF6EE}Prefabs/Compositions/Slotted/SlotRoadMedium/Barricade_M_USSR_01.et" {
+ coords 6709.631 109.223 5854.608
+ angleY 128.871
+}
+$grp AIWaypointCycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ Sniper_WP_CYCLE {
+  coords 6595.456 115.12 5906.031
+  CycleWaypoints {
+   "Sniper_WP_1" "Sniper_WAIT_1" "Sniper_WP_2" "Sniper_WAIT_2" "Sniper_WP_3" "Sniper_WAIT_3"
+  }
+ }
+ Fireteam_WP_CYCLE {
+  coords 6622.135 107.131 5838.004
+  CompletionType Leader
+  CycleWaypoints {
+   "Fireteam_Farm_WP_1" "Fireteam_Farm_WP_2" "Fireteam_Farm_WP_3" "Fireteam_Farm_WP_4"
+  }
+ }
+ Sentry_WP_CYCLE {
+  coords 6687.589 118.988 5991.003
+  CompletionType Leader
+  CycleWaypoints {
+   "Sentry_Farm_WP_1" "Sentry_Farm_WP_2" "Sentry_Farm_WP_3" "Sentry_Farm_WP_4"
+  }
+ }
+ Group_Farm_North_PatrolCycle {
+  coords 6496.017 122.878 6071.543
+  CycleWaypoints {
+   "Group_Farm_North_Patrol1" "Group_Farm_North_Patrol2" "Group_Farm_North_Patrol3"
+  }
+ }
+}
+$grp GenericEntity : "{3BAF6AA8C20D924D}Prefabs/Compositions/Misc/SubCompositions/Barricade_Logs_01.et" {
+ {
+  coords 6729.934 107.392 5842.552
+  angleY -75
+ }
+ {
+  coords 6723.931 107.34 5838.816
+  angleY -75
+ }
+}
+$grp Projectile : "{4DE72DF927310A8B}Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et" {
+ {
+  coords 6655.663 114.805 5927.555
+ }
+ {
+  coords 6655.499 114.805 5927.567
+  angleX 90
+  angleY 180
+  angleZ -180
+ }
+ {
+  coords 6655.647 114.807 5927.862
+  angleY -180
+  angleZ -180
+ }
+ {
+  coords 6655.431 114.805 5927.55
+ }
+}
+$grp SCR_TimedWaypoint : "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et" {
+ Sniper_WAIT_1 {
+  coords 6609.022 115.999 5887.309
+  m_holdingTime 17.4
+ }
+ Sniper_WAIT_2 {
+  coords 6578.41 116.007 5911.108
+  m_holdingTime 13.6
+ }
+ Sniper_WAIT_3 {
+  coords 6596.608 115.104 5904.164
+  m_holdingTime 8.1
+ }
+}
+SCR_EntityWaypoint MG_Farm_North_GetIn : "{712F4795CF8B91C7}Prefabs/AI/Waypoints/AIWaypoint_GetIn.et" {
+ coords 6494.871 121.976 6054.68
+ CompletionRadius 2
+}
+$grp SCR_AIWaypoint : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+ Sniper_WP_1 {
+  coords 6608.623 116.094 5885.514
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 1
+ }
+ Sniper_WP_2 {
+  coords 6576.644 116.135 5911.252
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 1
+ }
+ Sniper_WP_3 {
+  coords 6596.282 115.399 5902.665
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 1
+ }
+ Fireteam_Farm_WP_1 {
+  coords 6691.505 109.762 5870.758
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 5
+ }
+ Fireteam_Farm_WP_2 {
+  coords 6525.829 115.404 5952.248
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 5
+ }
+ Fireteam_Farm_WP_3 {
+  coords 6654.353 117.066 5972.698
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 5
+ }
+ Fireteam_Farm_WP_4 {
+  coords 6617.107 106.398 5831.377
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 5
+ }
+ Sentry_Farm_WP_1 {
+  coords 6603.235 117.841 6006.197
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 5
+ }
+ Sentry_Farm_WP_2 {
+  coords 6703.64 119.2 5987.269
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 5
+ }
+ Sentry_Farm_WP_3 {
+  coords 6769.766 112.222 5899.294
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 5
+ }
+ Sentry_Farm_WP_4 {
+  coords 6700.9 112.998 5911.891
+  AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+  CompletionRadius 5
+ }
+}
+GenericEntity : "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" {
+ coords 6656.044 114.815 5927.785
+ angleZ 90
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ Barricade_Farm_South_Defend {
+  coords 6711.134 109.308 5856.517
+  CompletionRadius 1
+ }
+ Farm_HouseDefend {
+  coords 6654.604 113.906 5929.528
+  CompletionRadius 1
+ }
+ Farm_North_WP_Defend {
+  coords 6510.746 122.414 6060.943
+ }
+}
+SCR_BoardingWaypoint Barricade_Farm_South_GetIn : "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et" {
+ coords 6709.156 109.305 5853.37
+ CompletionRadius 1
+}
+GenericEntity : "{B24C7A63EE4F0A5D}Prefabs/Compositions/Misc/CombatOps/CP_Headquarters_S_USSR_01.et" {
+ coords 6642.605 109.577 5866.436
+ angleY 114.315
+}
+GenericEntity : "{C0F7DD85A86B2900}Prefabs/Weapons/Handguns/PM/Handgun_PM.et" {
+ coords 6655.823 114.815 5927.758
+ angleZ 89.697
+}
+$grp SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" {
+ Sniper_Roof_Farm {
+  coords 6589.159 115.152 5910.809
+  m_aUnitPrefabSlots {
+   "{976AC400219898FA}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Sharpshooter.et"
+  }
+  m_aStaticWaypoints {
+   "Sniper_WP_CYCLE"
+  }
+ }
+ Sentry_Farm {
+  coords 6677.831 117.631 5972.826
+  m_aStaticWaypoints {
+   "Sentry_WP_CYCLE"
+  }
+ }
+ Barricade_Farm_South_Sentry_1 {
+  coords 6706.498 109.383 5854.65
+  angleY -178.651
+  m_aUnitPrefabSlots {
+   "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+  }
+  m_aStaticWaypoints {
+   "Barricade_Farm_South_GetIn"
+  }
+ }
+ Barricade_Farm_South_Sentry_2 {
+  coords 6706.547 109.748 5859.918
+  angleY -178.651
+  m_aUnitPrefabSlots {
+   "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+  }
+  m_aStaticWaypoints {
+   "Barricade_Farm_South_Defend"
+  }
+ }
+ Farm_Sentry_House {
+  coords 6656.569 113.905 5929.107
+  m_aUnitPrefabSlots {
+   "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+  }
+  m_aStaticWaypoints {
+   "Farm_HouseDefend"
+  }
+ }
+ Farm_North_Sentry_Defend {
+  coords 6508.931 125.788 6093.879
+  m_aStaticWaypoints {
+   "Farm_North_WP_Defend"
+  }
+ }
+}
+GenericEntity : "{DCBC472CDA3EA9B2}Prefabs/Props/Civilian/WallMap_01.et" {
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Materials {
+    MaterialAssignClass "{5B28B9FCEE05CCB0}" {
+     SourceMaterial "Map_01_Map"
+     AssignedMaterial "{B9FA24CC4768E833}Assets/Items/Equipment/Maps/Map_Paper_01/Data/PaperMap_Soviet_01_Full.emat"
+    }
+   }
+  }
+ }
+ coords 6653.943 114.721 5928.095
+ angleY 39.498
+}
+SCR_AIGroup FireTeam_Patrol_Farm : "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et" {
+ coords 6687.717 108.901 5837.806
+ m_aStaticWaypoints {
+  "Fireteam_WP_CYCLE"
+ }
+}

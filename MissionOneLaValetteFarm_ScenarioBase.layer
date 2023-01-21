@@ -1,0 +1,56 @@
+SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5B2901B5A18AA566}" {
+     NavmeshFile "{AD5F99CD7C59D5E0}worlds/GameMaster/Navmeshes/GM_Eden.nmn"
+     NavmeshFileOveride {
+      "{0F144876BFE64352}navmesh.nmn"
+     }
+    }
+   }
+  }
+ }
+ coords 6642.007 113.566 5936.031
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 6636.778 113.78 5938.517
+}
+SCR_GameModeEditor GameMode_Editor_Full1 : "{DA3986AF1B5032B7}Prefabs/MP/Modes/Editor/GameMode_Editor_Full.et" {
+ components {
+  SCR_EditorRespawnBriefingComponent "{570245454BF91285}" {
+   m_aWinConditions {
+    SCR_BriefingVictoryCondition "{5B277C225DF5B0AE}" {
+    }
+   }
+  }
+  SCR_PlayerSpawnPointManagerComponent "{56C2DDA69EF94C6D}" {
+  }
+ }
+ coords 6636.125 113.845 5939.313
+ m_bAutoPlayerRespawn 0
+ m_bAutoInitEditor 0
+ {
+  ScriptedChatEntity {
+   ID "56E685E9EF952A67"
+   "Default channel" "Local"
+  }
+  SCR_FactionManager "5B2901BB093B3445" {
+   ID "56E685E92F1B7E7A"
+   Factions {
+    SCR_Faction "{56DEAC40D2DBC8B1}" {
+     m_bIsPlayable 1
+    }
+   }
+   m_bCanChangeFactionsPlayable 0
+  }
+  SCR_GarbageManager {
+   ID "59169520F06B8436"
+   CharacterCollect 0
+   VehicleCollect 0
+  }
+ }
+}
+HitRegistrationManager HitRegManager1 : "{0EDA3D48791120DD}Prefabs/MP/HitRegManager.et" {
+ coords 6639.098 113.721 5937.837
+}

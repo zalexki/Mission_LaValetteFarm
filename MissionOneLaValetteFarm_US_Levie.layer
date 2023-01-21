@@ -1,0 +1,22 @@
+GenericEntity : "{010D5FBC85347C38}Prefabs/Compositions/Misc/SubCompositions/Sandbag_MG_US_01_M2HB.et" {
+ coords 7690.277 131.34 4844.849
+ angleY -10.389
+}
+GenericEntity : "{34A56AFC3D4FCAE2}Prefabs/Compositions/Slotted/SlotRoadSmall/Checkpoint_S_US_01.et" {
+ coords 7695.725 131.509 4845.257
+ angleY -13.118
+}
+SCR_AIGroup : "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" {
+ coords 7725.68 132.567 4834.203
+ m_aStaticWaypoints {
+  "Levie_Est_RB_WP_GetInNear"
+ }
+}
+GenericEntity : "{4D69F9D77C372BE5}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_US_01_M60.et" {
+ coords 7705.842 131.936 4846.885
+ angleY -3.415
+ angleZ -7.1
+}
+SCR_BoardingWaypoint Levie_Est_RB_WP_GetInNear : "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et" {
+ coords 7697.714 131.428 4845.335
+}
