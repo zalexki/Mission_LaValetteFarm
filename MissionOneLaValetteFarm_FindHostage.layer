@@ -10,7 +10,7 @@ SCR_FactionControlTriggerEntity TriggerHostage {
  UpdatePeriod 5
  OnActivate ""\
  "		/* code here */"\
- "		Print(\"hostage triggered\");"\
+ "		Print(\"hostage reinf triggered\");"\
  "		IEntity group = GetGame().GetWorld().FindEntityByName(\"Group_triggered_hostage_attack\");"\
  "		AIWaypoint waypoint = AIWaypoint.Cast(GetGame().GetWorld().FindEntityByName(\"WP_trigger_attack\"));"\
  "		SCR_AIGroup groupAI = SCR_AIGroup.Cast(group);"\
@@ -159,7 +159,7 @@ SCR_AIGroup Hostage : "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam
  coords 6405.463 161.847 6482.907
  angleY -112.223
  m_aUnitPrefabSlots {
-  "{9E95406C10C3DD59}Prefabs/HostageChimera.et"
+  "{9E95406C10C3DD59}Prefabs/Characters/Factions/BLUFOR/US_Army/HostageCharacter.et"
  }
  m_aStaticVehicles {
   "BTR1"
@@ -185,15 +185,10 @@ Vehicle BTR1 : "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et" {
  coords 6417.874 162.014 6475.848
  angleY -19.774
 }
-$grp SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" {
- Hostage_Sentry_Outside {
-  coords 6521.377 161.007 6512.893
- }
- Hostage_Sentry_Forest {
-  coords 6396.496 157.209 6652.602
-  m_aStaticWaypoints {
-   "Hostage_SentryForest_Cycle"
-  }
+SCR_AIGroup Hostage_Sentry_Forest : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" {
+ coords 6396.496 157.209 6652.602
+ m_aStaticWaypoints {
+  "Hostage_SentryForest_Cycle"
  }
 }
 SCR_AIGroup Group_triggered_hostage_attack : "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et" {

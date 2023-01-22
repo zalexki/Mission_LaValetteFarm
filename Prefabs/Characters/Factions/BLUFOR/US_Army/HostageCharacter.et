@@ -1,0 +1,62 @@
+SCR_ChimeraCharacter : "{2F912ED6E399FF47}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Unarmed.et" {
+ ID "520EC961A090BBD5"
+ components {
+  SCR_CommunicationSoundComponent "{54FD05D0C92D071F}" {
+  }
+  AIControlComponent "{520EA1D2DB109F34}" {
+  }
+  CharacterPerceivableComponent "{566CCE2397E28600}" {
+   Enabled 0
+  }
+  FactionAffiliationComponent "{520EC961FB0A2E90}" {
+  }
+  SCR_CharacterIdentityComponent "{5584CBC63E092DBC}" {
+   Identity Identity "{5584CBC6363C648B}" {
+    VisualIdentity VisualIdentity "{56E6D9456009D1C4}" {
+     Head "{0F6C19B0574DCBCA}Prefabs/Characters/Heads/Head_White_03.et"
+     Body "{32B5FE236D152368}Prefabs/Characters/Basebody/CharacterBasebody_Asian_02.et"
+    }
+    Surname "thehostage"
+   }
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Enabled 0
+    }
+    LoadoutSlotInfo Jacket {
+     Enabled 0
+    }
+    LoadoutSlotInfo Pants {
+     Enabled 0
+    }
+    LoadoutSlotInfo Boots {
+     Enabled 0
+    }
+   }
+  }
+  ActionsManagerComponent "{520EA1D2F659CE02}" {
+   ActionContexts {
+    UserActionContext "{520EA1D2F659CE17}" {
+     Position PointInfo "{520EA1D2F659CE14}" {
+      Offset 0 0.2 0
+     }
+    }
+   }
+   additionalActions {
+    LiberateHostageUserAction "{5C6A28C2D8770A0D}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{5C6AB5F247B67206}" {
+      Name "Liberate hostage and order him to go into the BTR"
+      Description "Hostage will find closest BTR and hide in it."
+     }
+     VisibilityRange 2
+     Duration 2
+    }
+   }
+  }
+ }
+ coords 101.717 0.1 57.819
+}

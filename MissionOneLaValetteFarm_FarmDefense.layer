@@ -18,7 +18,7 @@ $grp SCR_AIGroup : "{1A5F0D93609DA5DA}Prefabs/Groups/OPFOR/Group_USSR_ManeuverGr
  MG_Farm_North {
   coords 6481.852 121.59 6056.992
   m_aUnitPrefabSlots {
-   "{8E0FE664CE7D1CA9}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_GL.et"
+   "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
   }
   m_aStaticWaypoints {
    "MG_Farm_North_GetIn"
@@ -193,6 +193,11 @@ $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Def
  }
  Farm_North_WP_Defend {
   coords 6510.746 122.414 6060.943
+  m_DefendPresets {
+   SCR_DefendWaypointPreset "{58D6884489389713}" {
+    m_bUseTurrets 0
+   }
+  }
  }
 }
 SCR_BoardingWaypoint Barricade_Farm_South_GetIn : "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et" {

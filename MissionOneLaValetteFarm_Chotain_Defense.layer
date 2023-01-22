@@ -4,11 +4,27 @@ SCR_AIGroup Chotain_RB_Supp_team : "{1C0502B5729E7231}Prefabs/Groups/OPFOR/Group
   "Chotain_RB_WP_Defend"
  }
 }
-SCR_DefendWaypoint Chotain_RB_WP_Defend : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
- coords 7106.631 104.199 6276.438
- CompletionRadius 15
+GenericEntity : "{2A27606856B8A913}Prefabs/Compositions/Slotted/SlotRoadLarge/Barricade_L_USSR_01.et" {
+ coords 5808.354 189.76 6897.632
+ angleY 136.895
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ Chotain_RB_WP_Defend {
+  coords 7106.631 104.199 6276.438
+  CompletionRadius 15
+ }
+ WP_defend_entredeux {
+  coords 5808.086 190.523 6898.142
+  CompletionRadius 10
+ }
 }
 GenericEntity : "{9F9924B626C5FA2B}Prefabs/Compositions/Slotted/SlotRoadLarge/Checkpoint_L_USSR_01.et" {
  coords 7107.343 104.32 6275.25
  angleY 166.432
+}
+SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" {
+ coords 5795.495 194.012 6915.456
+ m_aStaticWaypoints {
+  "WP_defend_entredeux"
+ }
 }

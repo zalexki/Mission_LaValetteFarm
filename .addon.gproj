@@ -1,8 +1,0 @@
-GameProject {
- ID "MissionLaValetteFarm"
- GUID "5B2775E0947F7B9D"
- TITLE "Mission_LaValetteFarm"
- Dependencies {
-  "58D0FB3206B6F859"
- }
-}

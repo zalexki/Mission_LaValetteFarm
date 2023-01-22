@@ -2,10 +2,10 @@ SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
  components {
   NavmeshWorldComponent "{5584F30E67F617AD}" {
    NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
-    NavmeshFilesConfig BaseNavmeshFilesConfig "{5B2901B5A18AA566}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5C6D025832CA95F5}" {
      NavmeshFile "{AD5F99CD7C59D5E0}worlds/GameMaster/Navmeshes/GM_Eden.nmn"
      NavmeshFileOveride {
-      "{0F144876BFE64352}navmesh.nmn"
+      "{DE67563BA9814DC6}alorsmaybe.nmn"
      }
     }
    }
@@ -53,4 +53,15 @@ SCR_GameModeEditor GameMode_Editor_Full1 : "{DA3986AF1B5032B7}Prefabs/MP/Modes/E
 }
 HitRegistrationManager HitRegManager1 : "{0EDA3D48791120DD}Prefabs/MP/HitRegManager.et" {
  coords 6639.098 113.721 5937.837
+}
+GenericEntity : "{3BAF6AA8C20D924D}Prefabs/Compositions/Misc/SubCompositions/Barricade_Logs_01.et" {
+ coords 6718.63 109.826 5860.563
+ angleY -75
+ angleZ -3.931
+}
+GenericEntity : "{73C2A7008B434B5C}Prefabs/Compositions/Misc/SubCompositions/CanvasCover_Cluttered_USSR_03.et" {
+ coords 6553.803 118.691 6000.864
+ angleX 3.637
+ angleY 0.032
+ angleZ 0.638
 }

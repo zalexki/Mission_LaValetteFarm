@@ -6,16 +6,85 @@ GenericEntity : "{34A56AFC3D4FCAE2}Prefabs/Compositions/Slotted/SlotRoadSmall/Ch
  coords 7695.725 131.509 4845.257
  angleY -13.118
 }
-SCR_AIGroup : "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" {
- coords 7725.68 132.567 4834.203
- m_aStaticWaypoints {
-  "Levie_Est_RB_WP_GetInNear"
+$grp SCR_AIGroup : "{3BF36BDEEB33AEC9}Prefabs/Groups/BLUFOR/Group_US_SentryTeam.et" {
+ {
+  coords 7725.68 132.567 4834.203
+  m_aStaticWaypoints {
+   "Levie_Est_RB_WP_GetInNear"
+  }
+ }
+ {
+  coords 7487.527 117.318 5077.169
+  m_aStaticWaypoints {
+   "WP_defend_forest"
+  }
+ }
+ {
+  coords 6959.537 90.172 4690.325
+  m_aStaticWaypoints {
+   "WP_defend_road_west"
+  }
  }
 }
 GenericEntity : "{4D69F9D77C372BE5}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_US_01_M60.et" {
  coords 7705.842 131.936 4846.885
  angleY -3.415
  angleZ -7.1
+}
+$grp GenericEntity : "{6D9DAF822F4ABFE6}Prefabs/Compositions/Slotted/SlotRoadLarge/Checkpoint_L_US_01.et" {
+ {
+  coords 6945.454 88.752 4684.332
+  angleX -4.844
+  angleY -79.168
+  angleZ -0.926
+  {
+   GenericEntity {
+    ID "56FAEEC766B9582A"
+    Flags 2
+    {
+     DecalEntity {
+      ID "56E0B29FD3B522B3"
+      coords 0 -0.357 0
+      Flags 2
+      FarPlane 0.01
+      Stretch 0.01
+      TerrainOnly 0
+     }
+    }
+   }
+   StaticModelEntity {
+    ID "569A89A0A40CDB49"
+    coords 5.896 -0.191 5.937
+   }
+  }
+ }
+ {
+  coords 7485.114 117.368 5099.073
+  angleZ 2.926
+ }
+}
+GenericEntity : "{76167BEC292DCF79}Prefabs/Structures/Signs/Military/SignRectangle_01_140x100/Sign_Warzone_US_01.et" {
+ components {
+  Hierarchy "{569E7A0B050D01C5}" {
+   Enabled 1
+  }
+ }
+ coords 7704.452 132.096 4843.526
+ angleY -173.052
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ WP_defend_forest {
+  coords 7484.063 117.439 5100.574
+  CompletionRadius 15
+ }
+ WP_defend_road_west {
+  coords 6944.763 88.706 4684.082
+  CompletionRadius 10
+  m_DefendPresets {
+   SCR_DefendWaypointPreset "{58D6884489389713}" {
+   }
+  }
+ }
 }
 SCR_BoardingWaypoint Levie_Est_RB_WP_GetInNear : "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et" {
  coords 7697.714 131.428 4845.335
