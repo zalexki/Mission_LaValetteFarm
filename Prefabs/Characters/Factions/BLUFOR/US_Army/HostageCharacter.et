@@ -4,11 +4,20 @@ SCR_ChimeraCharacter : "{2F912ED6E399FF47}Prefabs/Characters/Factions/BLUFOR/US_
   SCR_CommunicationSoundComponent "{54FD05D0C92D071F}" {
   }
   AIControlComponent "{520EA1D2DB109F34}" {
+   components {
+    PerceptionComponent "{54A2CBC75F06064B}" {
+     Enabled 1
+    }
+    SCR_AICombatComponent "{55A2C9BE343B2EA1}" {
+     Enabled 1
+    }
+   }
   }
   CharacterPerceivableComponent "{566CCE2397E28600}" {
    Enabled 0
   }
   FactionAffiliationComponent "{520EC961FB0A2E90}" {
+   Enabled 0
   }
   SCR_CharacterIdentityComponent "{5584CBC63E092DBC}" {
    Identity Identity "{5584CBC6363C648B}" {
@@ -58,5 +67,5 @@ SCR_ChimeraCharacter : "{2F912ED6E399FF47}Prefabs/Characters/Factions/BLUFOR/US_
    }
   }
  }
- coords 101.717 0.1 57.819
+ coords 6406.247 162.039 6484.005
 }

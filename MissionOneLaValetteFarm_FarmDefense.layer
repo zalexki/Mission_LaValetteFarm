@@ -1,6 +1,8 @@
 GenericEntity : "{114DE81321786CD9}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01_PKM.et" {
- coords 6495.12 122.197 6057.744
- angleY -163.468
+ coords 6263.407 125.804 6093.166
+ angleX -12.982
+ angleY -153.41
+ angleZ -2.168
 }
 GenericEntity : "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" {
  components {
@@ -14,37 +16,46 @@ GenericEntity : "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_fold
  }
  coords 6660.55 114.918 5927.916
 }
-$grp SCR_AIGroup : "{1A5F0D93609DA5DA}Prefabs/Groups/OPFOR/Group_USSR_ManeuverGroup.et" {
- MG_Farm_North {
-  coords 6481.852 121.59 6056.992
-  m_aUnitPrefabSlots {
-   "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
-  }
-  m_aStaticWaypoints {
-   "MG_Farm_North_GetIn"
-  }
- }
- Group_Farm_North {
-  coords 6553.034 130.99 6113.683
-  m_aStaticWaypoints {
-   "Group_Farm_North_PatrolCycle"
-  }
+SCR_AIGroup Group_Farm_North : "{1A5F0D93609DA5DA}Prefabs/Groups/OPFOR/Group_USSR_ManeuverGroup.et" {
+ coords 6553.034 130.99 6113.683
+ m_aStaticWaypoints {
+  "Group_Farm_North_PatrolCycle"
  }
 }
 $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
  Group_Farm_North_Patrol1 {
-  coords 6542.205 133.094 6127.35
+  coords 6835.893 136.808 6259.4
  }
  Group_Farm_North_Patrol2 {
-  coords 6486.656 122.32 6067.293
+  coords 6725.691 129.016 6081.003
  }
  Group_Farm_North_Patrol3 {
   coords 6428.158 122.634 6095.239
  }
 }
-GenericEntity : "{27F6A0815E6FF6EE}Prefabs/Compositions/Slotted/SlotRoadMedium/Barricade_M_USSR_01.et" {
+GenericEntity barricade_farm_south : "{27F6A0815E6FF6EE}Prefabs/Compositions/Slotted/SlotRoadMedium/Barricade_M_USSR_01.et" {
  coords 6709.631 109.223 5854.608
  angleY 128.871
+ {
+  GenericEntity {
+   ID "5A68D4A6CA6FEEE6"
+   {
+    DecalEntity {
+     ID "56E0B29E01E2AC90"
+     coords 0 -2.313 0
+    }
+   }
+  }
+  GenericEntity {
+   ID "5A68D4A6CA6FEFB0"
+   {
+    DecalEntity {
+     ID "56DEFDB4A9499F9B"
+     coords 0 -1.161 0
+    }
+   }
+  }
+ }
 }
 $grp AIWaypointCycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
  Sniper_WP_CYCLE {
@@ -117,9 +128,11 @@ $grp SCR_TimedWaypoint : "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait
   m_holdingTime 8.1
  }
 }
-SCR_EntityWaypoint MG_Farm_North_GetIn : "{712F4795CF8B91C7}Prefabs/AI/Waypoints/AIWaypoint_GetIn.et" {
- coords 6494.871 121.976 6054.68
- CompletionRadius 2
+GenericEntity : "{73C2A7008B434B5C}Prefabs/Compositions/Misc/SubCompositions/CanvasCover_Cluttered_USSR_03.et" {
+ coords 6587.462 112.978 5951.832
+ angleX 3.202
+ angleY -48.059
+ angleZ -6.638
 }
 $grp SCR_AIWaypoint : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
  Sniper_WP_1 {
@@ -184,25 +197,17 @@ GenericEntity : "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8r
 }
 $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
  Barricade_Farm_South_Defend {
-  coords 6711.134 109.308 5856.517
-  CompletionRadius 1
+  coords 6710.259 109.308 5854.478
+  CompletionRadius 7
  }
  Farm_HouseDefend {
   coords 6654.604 113.906 5929.528
   CompletionRadius 1
  }
- Farm_North_WP_Defend {
-  coords 6510.746 122.414 6060.943
-  m_DefendPresets {
-   SCR_DefendWaypointPreset "{58D6884489389713}" {
-    m_bUseTurrets 0
-   }
-  }
+ WP_defend_forest_west {
+  coords 6261.413 127.685 6089.801
+  CompletionRadius 10
  }
-}
-SCR_BoardingWaypoint Barricade_Farm_South_GetIn : "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et" {
- coords 6709.156 109.305 5853.37
- CompletionRadius 1
 }
 GenericEntity : "{B24C7A63EE4F0A5D}Prefabs/Compositions/Misc/CombatOps/CP_Headquarters_S_USSR_01.et" {
  coords 6642.605 109.577 5866.436
@@ -229,17 +234,17 @@ $grp SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam
   }
  }
  Barricade_Farm_South_Sentry_1 {
-  coords 6706.498 109.383 5854.65
+  coords 6701.094 109.815 5863.635
   angleY -178.651
   m_aUnitPrefabSlots {
    "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
   }
   m_aStaticWaypoints {
-   "Barricade_Farm_South_GetIn"
+   "Barricade_Farm_South_Defend"
   }
  }
  Barricade_Farm_South_Sentry_2 {
-  coords 6706.547 109.748 5859.918
+  coords 6700.761 110.553 5868.176
   angleY -178.651
   m_aUnitPrefabSlots {
    "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
@@ -261,6 +266,12 @@ $grp SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam
   coords 6508.931 125.788 6093.879
   m_aStaticWaypoints {
    "Farm_North_WP_Defend"
+  }
+ }
+ {
+  coords 6256.235 130.747 6125.023
+  m_aStaticWaypoints {
+   "WP_defend_forest_west"
   }
  }
 }

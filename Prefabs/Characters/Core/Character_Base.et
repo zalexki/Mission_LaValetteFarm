@@ -1,8 +1,16 @@
 SCR_ChimeraCharacter {
  ID "520EC961A090B1EE"
  components {
+  AIControlComponent "{520EA1D2DB109F34}" {
+   components {
+    SCR_AICombatComponent "{55A2C9BE343B2EA1}" {
+     m_eAISkillDefault ROOKIE
+    }
+   }
+  }
   SCR_VoNComponent "{520EA1D2F659C856}" {
    "Speaking Range" 25
   }
  }
+ coords 6456.875 162.065 6479.001
 }

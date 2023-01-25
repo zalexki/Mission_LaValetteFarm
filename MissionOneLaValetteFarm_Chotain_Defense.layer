@@ -5,7 +5,8 @@ SCR_AIGroup Chotain_RB_Supp_team : "{1C0502B5729E7231}Prefabs/Groups/OPFOR/Group
  }
 }
 GenericEntity : "{2A27606856B8A913}Prefabs/Compositions/Slotted/SlotRoadLarge/Barricade_L_USSR_01.et" {
- coords 5808.354 189.76 6897.632
+ coords 5808.353 189.76 6897.632
+ angleX -10.138
  angleY 136.895
 }
 $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {

@@ -1,0 +1,9 @@
+SCR_ChimeraAIAgent {
+ ID "50C4E8413B94E8B0"
+ components {
+  SCR_AIConfigComponent "{5122F2C32CDD251C}" {
+   m_Skill 0.1
+  }
+ }
+ coords 6461.177 161.972 6484.144
+}

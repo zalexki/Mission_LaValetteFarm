@@ -4,9 +4,6 @@ SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
    NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
     NavmeshFilesConfig BaseNavmeshFilesConfig "{5C6D025832CA95F5}" {
      NavmeshFile "{AD5F99CD7C59D5E0}worlds/GameMaster/Navmeshes/GM_Eden.nmn"
-     NavmeshFileOveride {
-      "{DE67563BA9814DC6}alorsmaybe.nmn"
-     }
     }
    }
   }
@@ -28,13 +25,17 @@ SCR_GameModeEditor GameMode_Editor_Full1 : "{DA3986AF1B5032B7}Prefabs/MP/Modes/E
   }
  }
  coords 6636.125 113.845 5939.313
+ OnGameStart ""\
+ "		Print(\"OnGameStart\");"\
+ "		SCR_AIWorld aiworld = SCR_AIWorld.Cast(GetGame().GetAIWorld());"\
+ "		IEntity entity1 = GetWorld().FindEntityByName(\"barricade_farm_south\");"\
+ "		aiworld.RequestNavmeshRebuildEntity(entity1);"\
+ "		//RequestNavmeshRebuild"\
+ "		"\
+ "	"
  m_bAutoPlayerRespawn 0
  m_bAutoInitEditor 0
  {
-  ScriptedChatEntity {
-   ID "56E685E9EF952A67"
-   "Default channel" "Local"
-  }
   SCR_FactionManager "5B2901BB093B3445" {
    ID "56E685E92F1B7E7A"
    Factions {
@@ -43,6 +44,10 @@ SCR_GameModeEditor GameMode_Editor_Full1 : "{DA3986AF1B5032B7}Prefabs/MP/Modes/E
     }
    }
    m_bCanChangeFactionsPlayable 0
+  }
+  ScriptedChatEntity {
+   ID "56E685E9EF952A67"
+   "Default channel" "Local"
   }
   SCR_GarbageManager {
    ID "59169520F06B8436"
@@ -54,14 +59,6 @@ SCR_GameModeEditor GameMode_Editor_Full1 : "{DA3986AF1B5032B7}Prefabs/MP/Modes/E
 HitRegistrationManager HitRegManager1 : "{0EDA3D48791120DD}Prefabs/MP/HitRegManager.et" {
  coords 6639.098 113.721 5937.837
 }
-GenericEntity : "{3BAF6AA8C20D924D}Prefabs/Compositions/Misc/SubCompositions/Barricade_Logs_01.et" {
- coords 6718.63 109.826 5860.563
- angleY -75
- angleZ -3.931
-}
-GenericEntity : "{73C2A7008B434B5C}Prefabs/Compositions/Misc/SubCompositions/CanvasCover_Cluttered_USSR_03.et" {
- coords 6553.803 118.691 6000.864
- angleX 3.637
- angleY 0.032
- angleZ 0.638
+SCR_MPDestructionManager : "{9BB369F2803C6F71}Prefabs/MP/MPDestructionManager.et" {
+ coords 6620.799 114.439 5951.933
 }
